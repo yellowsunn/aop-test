@@ -2,7 +2,7 @@ package com.yellowsunn.aop
 
 import com.yellowsunn.aop.order.OrderRepository
 import com.yellowsunn.aop.order.OrderService
-import com.yellowsunn.aop.order.aop.AspectV2
+import com.yellowsunn.aop.order.aop.AspectV3
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.slf4j.Logger
@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Import
 
 @SpringBootTest
-@Import(AspectV2::class)
+@Import(AspectV3::class)
 class AopTest {
     @Autowired
     lateinit var orderService: OrderService
