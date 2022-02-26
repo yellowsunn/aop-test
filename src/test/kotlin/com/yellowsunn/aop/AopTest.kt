@@ -3,6 +3,7 @@ package com.yellowsunn.aop
 import com.yellowsunn.aop.order.OrderRepository
 import com.yellowsunn.aop.order.OrderService
 import com.yellowsunn.aop.order.aop.AspectV4PointCut
+import com.yellowsunn.aop.order.aop.AspectV5Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.slf4j.Logger
@@ -13,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Import
 
 @SpringBootTest
-@Import(AspectV4PointCut::class)
+@Import(AspectV5Order.LogAspect::class, AspectV5Order.TxAspect::class)
 class AopTest {
     @Autowired
     lateinit var orderService: OrderService
